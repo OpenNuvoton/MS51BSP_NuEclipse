@@ -4,15 +4,19 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-
 #include "ms51_32k_sdcc.h"
 
 unsigned char uart3rvbuffer;
-__bit uart3rvflag;
+BIT uart3rvflag;
 
+/**
+ * @brief       SC1 UART3 Interrupt Vector demo
+ * @param       None
+ * @return      None
+ * @details     UART3 store received data.
+ */
 #if 0 /*interrupt vector demo */
-void SMC1_ISR(void) __interrupt (22)         // Vector @  0x9B
+void SC1_ISR(void) __interrupt (22)         // Vector @  0x9B
 {
     PUSH_SFRS;
         SFRS = 2;

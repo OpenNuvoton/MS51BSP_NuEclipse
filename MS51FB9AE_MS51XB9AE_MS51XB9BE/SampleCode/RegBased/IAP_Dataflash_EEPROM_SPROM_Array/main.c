@@ -4,8 +4,6 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-
 #include "ms51_16k_sdcc.h"
 
 
@@ -20,13 +18,9 @@ struct
 unsigned char ArrayData[50];
 unsigned char i;
 
-/**
- * @brief       IAP program dataflash as EEPROM
- * @param       None
- * @return      None
- * @details     define dataflash need be modify address and value,
- */
-
+/************************************************************************************************************/
+/* FUNCTION_PURPOSE: Main Loop                                                                              */
+/************************************************************************************************************/
 void main(void)
 {
     unsigned int system16highsite;

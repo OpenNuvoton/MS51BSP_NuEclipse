@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <projectDescription>
-	<name>Fsys_Select_ECLK</name>
-	<comment></comment>
+	<name>Fsys_Select_LIRC</name>
+	<comment />
 	<projects>
 	</projects>
 	<buildSpec>
@@ -42,16 +42,7 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1675158469041</id>
-			<name>Library</name>
-			<type>5</type>
-			<matcher>
-				<id>org.eclipse.ui.ide.multiFilter</id>
-				<arguments>1.0-name-matches-false-false-sys.c</arguments>
-			</matcher>
-		</filter>
-		<filter>
-			<id>1675158469046</id>
+			<id>1675158285974</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -60,7 +51,16 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1675158469052</id>
+			<id>1675158285980</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-sys.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1675158285986</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>

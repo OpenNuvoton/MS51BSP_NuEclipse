@@ -11,7 +11,6 @@
 #define  HIRC_16        7
 #define  HIRC_166       8
 
-extern __bit BIT_TMP;
 
 void FsysSelect(unsigned char u8FsysMode);
 void ClockEnable(unsigned char u8FsysMode);

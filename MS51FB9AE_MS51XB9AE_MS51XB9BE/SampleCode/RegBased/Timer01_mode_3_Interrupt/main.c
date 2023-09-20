@@ -48,6 +48,8 @@ void Timer1_ISR (void) __interrupt (3)              // interrupt address is 0x00
 ************************************************************************************************************/
 void main (void)
 {
+	MODIFY_HIRC(HIRC_24);
+
     ENABLE_TIMER0_MODE3;
     TIMER0_FSYS;
   

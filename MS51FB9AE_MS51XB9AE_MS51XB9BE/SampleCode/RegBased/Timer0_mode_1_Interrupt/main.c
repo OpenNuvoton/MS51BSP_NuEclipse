@@ -38,6 +38,8 @@ void Timer0_ISR (void) __interrupt (1)  //interrupt address is 0x000B
 ************************************************************************************************************/
 void main (void)
 {
+    MODIFY_HIRC(HIRC_24);
+	
     P12_PUSHPULL_MODE;
   
     ENABLE_TIMER0_MODE1;

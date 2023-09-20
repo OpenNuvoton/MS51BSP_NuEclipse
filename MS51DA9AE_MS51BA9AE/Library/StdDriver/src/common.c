@@ -7,7 +7,7 @@
 
 #include "ms51_8k_sdcc.h"
 
-__bit BIT_TMP;
+BIT BIT_TMP;
 unsigned char __data  TA_REG_TMP,BYTE_TMP,SFRS_TMP;
 
 /**
@@ -40,6 +40,40 @@ void Software_Reset(unsigned char u8Bootarea)
     CHPCON = boottemp;                   //software reset enable
 }
 
+/**
+ * @brief       MCU power down mode enable API
+ * @param       Enable power down mode
+ *                       - \ref ENABLE: Run into power down mode .
+ * @return      None
+ * @details     None
+ */
+void PowerDown_Mode(unsigned char PDStatus)
+{
+    if (PDStatus)
+    {
+       ENABLE_POWERDOWN_MODE;
+       CALL_NOP;
+       CALL_NOP;
+    }
+}
+
+/**
+ * @brief       MCU idle mode enable API
+ * @param       Enable idle mode
+ *                       - \ref ENABLE: Run into idle mode .
+ * @return      None
+ * @details     None
+ */
+void Idle_Mode(unsigned char IdleStatus)
+{
+    if (IdleStatus)
+    {
+       ENABLE_IDLE_MODE;
+       CALL_NOP;
+       CALL_NOP;
+    }
+}
+
 
 /**
  * @brief       Software loop delay by HIRC, about 3ms
@@ -47,7 +81,7 @@ void Software_Reset(unsigned char u8Bootarea)
  * @return      None
  * @details     None
  */
-void _nopDelay_(void)
+void _delay_(void)
 {
   unsigned char t1,t2;
 

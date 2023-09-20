@@ -4,7 +4,7 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
+#include "ms51_16k_sdcc.h"
 
 //***********************************************************************************************************
 //  File Function: MS51 I2C demo code, Slave Address of 24LC64 = 0xA0
@@ -24,8 +24,6 @@
 //  occured during the progress, Port3 will show 0x00.
 //***********************************************************************************************************
 
-#include "ms51_16k_sdcc.h"
-
 //#define  print_function
 
 #define SYS_DIV                 1
@@ -42,7 +40,7 @@
 #define ERROR_CODE              0x78
 #define TEST_OK                 0x00
 
-__bit I2C_Reset_Flag;
+BIT I2C_Reset_Flag;
 //========================================================================================================
 void Init_I2C(void)
 {
@@ -73,8 +71,8 @@ void I2C_SI_Check(void)
 
 void One_Page_Read(UINT8 u8PageNumber,UINT8 u8DAT)
 {
-    UINT8  u8Count;
-    UINT16 u16Address;
+    uint8_t  u8Count;
+    uint16_t u16Address;
 
     u16Address = (UINT16)u8PageNumber*32;
 
@@ -220,8 +218,8 @@ Read_Error_Stop:
 //========================================================================================================
 void One_Page_Write(UINT8 u8PageNumber,UINT8 u8DAT)
 {
-    UINT8  u8Count;
-    UINT16 u16Address;
+    uint8_t  u8Count;
+    uint16_t u16Address;
 
     u16Address = (UINT16)u8PageNumber*32;
 
@@ -354,26 +352,17 @@ Write_Error_Stop:
 void main(void)
 {
 
-    ALL_GPIO_QUASI_MODE;
-#ifdef print_function
-/* Modify HIRC to 24MHz for UART baud rate deviation not over 1%*/
     MODIFY_HIRC(HIRC_24);
-    P06_QUASI_MODE;
-    UART_Open(24000000,UART0_Timer3,115200);
-    ENABLE_UART0_PRINTF;
-#endif
+    Enable_UART0_VCOM_printf_24M_115200();
     /* Initial I2C function */
     Init_I2C();                                 //initial I2C circuit
     
     /* page0 R/W */
-#ifdef print_function
+
     printf ("\n\n24LC64 Page0 Write (0x55,0xAA...)...");
-#endif
     One_Page_Write(0,0x55);                     //page0, write 0x55,0xAA,........
 
-#ifdef print_function
     printf ("\n\n24LC64 Page0 Read...");
-#endif
     One_Page_Read (0,0x55);                     //page0, read  0x55,0xAA,........
 
     /* page1 R/W */
@@ -417,9 +406,7 @@ void main(void)
     One_Page_Read (255,0x0F);                   //page255, read  0x0F,0xF0,........
 
     /* ==== Test Pass ==== */      
-#ifdef print_function
     printf ("\n\MS51 <--> 24LC64, I2C Demo Code test pass...");
-#endif
 
     while (1);
 /* =================== */

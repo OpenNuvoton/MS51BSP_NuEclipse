@@ -42,7 +42,16 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1675158691010</id>
+			<id>1694071536643</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-sys.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1694071536649</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -51,7 +60,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1675158691016</id>
+			<id>1694071536655</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -60,14 +69,4 @@
 			</matcher>
 		</filter>
 	</filteredResources>
-	<variableList>
-		<variable>
-			<name>copy_PARENT</name>
-			<value>$%7BPARENT-3-PROJECT_LOC%7D/WorkFolder/0.Product_all/00.BSP_FINAL_RELEASE/NuEclips_MS51/MS51DA9AE_MS51BA9AE</value>
-		</variable>
-		<variable>
-			<name>copy_PARENT1</name>
-			<value>$%7Bcopy_PARENT%7D/SampleCode/RegBased/GPIO_Input_Output</value>
-		</variable>
-	</variableList>
 </projectDescription>

@@ -31,7 +31,7 @@
 #include "uart2.h"
 #include "uart3.h"
 #include "uart4.h"
-#include "watchdog.h"
+#include "wdt.h"
 #include "wkt.h"
 
 /********SFR ALL PAGES*************/

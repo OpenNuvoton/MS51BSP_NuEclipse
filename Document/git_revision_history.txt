@@ -3,3 +3,9 @@
 
 2023/7
 1.All                         Modify all file define with low case letter for linux version.
+
+2023/8
+1.All                         After py check
+
+2023/8
+1.MS51_32K                    Added uart2 ~ uart4 printf.

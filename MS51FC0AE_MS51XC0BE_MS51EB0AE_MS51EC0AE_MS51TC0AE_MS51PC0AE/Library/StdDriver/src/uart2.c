@@ -8,10 +8,16 @@
 #include "ms51_32k_sdcc.h"
 
 unsigned char uart2rvbuffer;
-__bit uart2rvflag;
+BIT uart2rvflag;
 
+/**
+ * @brief       SC1 UART2 interrupt Vector demo
+ * @param       None
+ * @return      None
+ * @details     Store received data.
+ */
 #if 0  /*interrupt vector demo */
-void SMC0_ISR(void) __interrupt (21)          // Vector @  0x9B
+void SC0_ISR(void) __interrupt (21)          // Vector @  0x9B
 {
     PUSH_SFRS;
  /* Since only enable receive interrupt, not add flag check */

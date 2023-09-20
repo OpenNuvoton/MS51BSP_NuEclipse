@@ -9,7 +9,7 @@
 /************************************************************************************************************/
 /*  File Function: MS51 INT1 extneranl interrupt demo                                                       */
 /************************************************************************************************************/
-#include "MS51_16K_SDCC.h"
+#include "MS51_32K_SDCC.h"
 
 /* External pin interrupt INT0 subroutine */
 void INT0_ISR(void) __interrupt (2)          // Vector @  0x03

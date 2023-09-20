@@ -42,7 +42,7 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>1675309473291</id>
+			<id>1693474766530</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -51,7 +51,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1675309473297</id>
+			<id>1693474766535</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -60,7 +60,7 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1675309473303</id>
+			<id>1693474766541</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
@@ -69,12 +69,30 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1675309473309</id>
+			<id>1693474766547</id>
 			<name>Library</name>
 			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-sdcc_stdio.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1693474766552</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-wdt.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1693474766558</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-delay.c</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

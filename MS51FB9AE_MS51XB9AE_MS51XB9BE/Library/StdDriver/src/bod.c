@@ -32,11 +32,11 @@ void BOD_Open(unsigned char u8bodstatus, unsigned char u8bodlevel, unsigned char
 {
      SFRS=0; BODCON0=0;
 
-     SFRTEMP |= (u8bodlevel | u8bodresetstatus);          // BOD level select and reset status
-     SFRTEMP |= (u8bodstatus<<7) & SET_BIT7;
+     BYTE_TMP |= (u8bodlevel | u8bodresetstatus);          // BOD level select and reset status
+     BYTE_TMP |= (u8bodstatus<<7) & SET_BIT7;
      TA=0xAA;
      TA=0x55;
-     BODCON0=SFRTEMP;
+     BODCON0=BYTE_TMP;
 }
 
 

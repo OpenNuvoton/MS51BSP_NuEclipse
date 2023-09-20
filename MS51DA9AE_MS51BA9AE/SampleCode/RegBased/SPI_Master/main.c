@@ -48,7 +48,7 @@ void Start_SPI_process(UINT8 *pu8MID,UINT8 *pu8DID)
        SPI_Error(); 
 
 #ifdef spi_trans_delay                      /* if slave is interrupt mode, add delay to wait */
-    _nopDelay_();                              /* remark #define spi_trans_delay for normal polling transmittion */
+    _delay_();                              /* remark #define spi_trans_delay for normal polling transmittion */
 
 #endif
 
@@ -57,7 +57,7 @@ void Start_SPI_process(UINT8 *pu8MID,UINT8 *pu8DID)
        SPI_Error();
 
 #ifdef spi_trans_delay
-    _nopDelay_();
+    _delay_();
 #endif
 
     Spi_Write_Byte(0x02);
@@ -65,7 +65,7 @@ void Start_SPI_process(UINT8 *pu8MID,UINT8 *pu8DID)
        SPI_Error();
 
 #ifdef spi_trans_delay
-    _nopDelay_();
+    _delay_();
 #endif
 
     Spi_Write_Byte(0x03);
@@ -73,7 +73,7 @@ void Start_SPI_process(UINT8 *pu8MID,UINT8 *pu8DID)
        SPI_Error();
 
 #ifdef spi_trans_delay
-    _nopDelay_();
+    _delay_();
 #endif
 
     Spi_Write_Byte(0x04);
@@ -81,7 +81,7 @@ void Start_SPI_process(UINT8 *pu8MID,UINT8 *pu8DID)
        SPI_Error();
 
 #ifdef spi_trans_delay
-    _nopDelay_();
+    _delay_();
 #endif
 
    /* Slave Polling receive data*/

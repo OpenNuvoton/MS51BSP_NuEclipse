@@ -116,6 +116,13 @@ __endasm;
 /*****************************************************************************/
 #define    ENABLE_SOFTWARE_RESET_TO_APROM    clr_CHPCON_BS;set_CHPCON_SWRST
 #define    ENABLE_SOFTWARE_RESET_TO_LDROM    set_CHPCON_BS;set_CHPCON_SWRST
+
+/*****************************************************************************/
+/*   Power down / idle mode define                                           */
+/*****************************************************************************/
+#define    ENABLE_POWERDOWN_MODE    set_PCON_PD
+#define    ENABLE_IDLE_MODE         set_PCON_IDLE
+
 /*****************************************************************************/
 /*   BOD Define                                                              */
 /*****************************************************************************/
@@ -319,7 +326,7 @@ __endasm;
 #define    CLEAR_TIMER2_INTERRUPT_FLAG       clr_T2CON_TF2
 #define    CLEAR_SPI0_INTERRUPT_FLAG         clr_SPSR_SPIF
 #define    CLEAR_PWM0_FB_INTERRUPT_FLAG      clr_PWM0FBD_FBF
-#define    CLEAR_WDT_INTERRUPT_FLAG          clr_WKCON_WKTF
+#define    CLEAR_WDT_INTERRUPT_FLAG          clr_WDCON_WDTF
 #define    CLEAR_PWM0_INTERRUPT_FLAG         clr_PWM1CON0_PWMF
 #define    CLEAR_CAPTURE_INTERRUPT_IC0_FLAG  clr_CAPCON0_CAPF0
 #define    CLEAR_CAPTURE_INTERRUPT_IC1_FLAG  clr_CAPCON0_CAPF1

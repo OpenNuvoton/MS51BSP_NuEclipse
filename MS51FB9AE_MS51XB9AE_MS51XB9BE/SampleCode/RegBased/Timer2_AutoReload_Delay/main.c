@@ -19,6 +19,7 @@ void Timer2_ISR (void) __interrupt (5)
     PUSH_SFRS;
 
     clr_T2CON_TF2;                                //Clear Timer2 Interrupt Flag
+    GPIO_LED ^= 1;
 
     POP_SFRS;
 }	
@@ -28,24 +29,14 @@ void Timer2_ISR (void) __interrupt (5)
 ************************************************************************************************************/
 void main (void)
 {
-    ALL_GPIO_QUASI_MODE;
+	MODIFY_HIRC(HIRC_24);
+
+	GPIO_LED_QUASI_MODE;
   
-    TIMER2_DIV_128;
-    TIMER2_Auto_Reload_Delay_Mode;
-  
-    RCMP2H = 0x60;
-    RCMP2L = 0xFF;
+	Timer2_AutoReload_Interrupt_Initial(24, 6400);
 
-    TL2 = 0x60;
-    TH2 =0xFF;
+    ENABLE_GLOBAL_INTERRUPT;
 
-    set_EIE_ET2;                                    // Enable Timer2 interrupt
-    set_IE_EA;
-    set_T2CON_TR2;                                    // Timer2 run
-
-    while(1)
-    {
-      set_T2CON_TR2;
-    }
+    while(1);
 
 }

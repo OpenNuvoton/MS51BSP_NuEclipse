@@ -15,7 +15,6 @@
 // Following define by customer
 // Please confirm the start addresss not over your code size
 //---------------------------------------------------------------
-#define     DATA_SIZE           128
 #define     DATA_START_ADDR     0x3800 
 
 

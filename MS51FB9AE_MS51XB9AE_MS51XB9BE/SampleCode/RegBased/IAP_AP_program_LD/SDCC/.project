@@ -42,12 +42,48 @@
 	</linkedResources>
 	<filteredResources>
 		<filter>
-			<id>0</id>
+			<id>1694154350593</id>
 			<name>Library</name>
-			<type>9</type>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-common.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1694154350598</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-sys.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1694154350604</id>
+			<name>Library</name>
+			<type>5</type>
 			<matcher>
 				<id>org.eclipse.ui.ide.multiFilter</id>
 				<arguments>1.0-name-matches-false-false-iap.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1694154350610</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-uart.c</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1694154350617</id>
+			<name>Library</name>
+			<type>5</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-false-false-sdcc_stdio.c</arguments>
 			</matcher>
 		</filter>
 	</filteredResources>

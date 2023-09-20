@@ -47,41 +47,6 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 			<storageModule moduleId="ilg.gnuarmeclipse.managedbuild.packs"/>
 		</cconfiguration>
-		<cconfiguration id="cdt.managedbuild.config.sdcc.exe.debug.1159080647">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.sdcc.exe.debug.1159080647" moduleId="org.eclipse.cdt.core.settings" name="Debug">
-				<externalSettings/>
-				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
-					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.MakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
-				</extensions>
-			</storageModule>
-			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactExtension="hex" artifactName="${ProjName}" buildProperties="" cleanCommand="rm -rf" description="" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="cdt.managedbuild.config.sdcc.exe.debug.1159080647" name="Debug" parent="cdt.managedbuild.config.sdcc.exe.debug">
-					<folderInfo id="cdt.managedbuild.config.sdcc.exe.debug.1159080647." name="/" resourcePath="">
-						<toolChain id="cdt.managedbuild.toolchain.sdcc.exe.debug.1425549417" name="SDCC Tool Chain" superClass="cdt.managedbuild.toolchain.sdcc.exe.debug">
-							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.sdcc.platform.exe.release.590803851" name="Release Platform" osList="solaris,linux,hpux,aix,qnx,win32" superClass="cdt.managedbuild.target.sdcc.platform.exe.release"/>
-							<builder buildPath="${workspace_loc:/GPIO_Input_Output}/Debug" id="cdt.managedbuild.target.sdcc.builder.exe.release.2049823132" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Sdcc Make" superClass="cdt.managedbuild.target.sdcc.builder.exe.release"/>
-							<tool id="cdt.managedbuild.tool.sdcc.c.compiler.exe.debug.1605565578" name="SDCC Compiler" superClass="cdt.managedbuild.tool.sdcc.c.compiler.exe.debug">
-								<inputType id="cdt.managedbuild.tool.sdcc.c.compiler.input.1942172024" superClass="cdt.managedbuild.tool.sdcc.c.compiler.input"/>
-							</tool>
-							<tool id="cdt.managedbuild.tool.sdcc.c.linker.exe.debug.874374821" name="SDCC Linker" superClass="cdt.managedbuild.tool.sdcc.c.linker.exe.debug">
-								<inputType id="cdt.managedbuild.tool.sdcc.c.linker.input.825948112" superClass="cdt.managedbuild.tool.sdcc.c.linker.input">
-									<additionalInput kind="additionalinputdependency" paths="$(USER_RELS)"/>
-									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
-								</inputType>
-							</tool>
-							<tool id="cdt.managedbuild.tool.sdcc.assembler.exe.release.542382996" name="SDCC Assembler" superClass="cdt.managedbuild.tool.sdcc.assembler.exe.release">
-								<inputType id="cdt.managedbuild.tool.sdcc.assembler.input.1956274274" superClass="cdt.managedbuild.tool.sdcc.assembler.input"/>
-							</tool>
-						</toolChain>
-					</folderInfo>
-				</configuration>
-			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
-		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="GPIO_Input_Output.cdt.managedbuild.target.sdcc.exe.1585595547" name="MCS51 family (SDCC)" projectType="cdt.managedbuild.target.sdcc.exe"/>

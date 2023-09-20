@@ -4,11 +4,6 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-
-//***********************************************************************************************************
-//  File Function: MS51 SPI in Master mode demo code
-//***********************************************************************************************************
 #include "ms51_16k_sdcc.h"
 
 #define  slave_interrupt
@@ -41,7 +36,7 @@ void SPI_Initial(void)
     clr_SPSR_SPIF;
 }
 //-----------------------------------------------------------------------------------------------------------
-void Start_SPI_process(UINT8 *pu8MID,UINT8 *pu8DID)
+void Start_SPI_process(unsigned char *pu8MID,unsigned char *pu8DID)
 {
     SS = 0;
 

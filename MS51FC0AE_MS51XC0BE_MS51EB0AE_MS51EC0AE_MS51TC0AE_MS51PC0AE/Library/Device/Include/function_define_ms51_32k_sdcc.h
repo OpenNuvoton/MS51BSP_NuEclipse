@@ -38,7 +38,7 @@ typedef signed char           INT8;
 typedef signed int            INT16;
 typedef signed long           INT32;
 
-#if 0
+#if 0        /* for sdcc define in stdint.h */
 typedef unsigned char         uint8_t;
 typedef unsigned int          uint16_t;
 typedef unsigned long         uint32_t;
@@ -129,9 +129,9 @@ __asm \
 nop; \
 __endasm;
 
-/*****************************************************************************************
-* IAP function process 
-*****************************************************************************************/
+/*****************************************************************************/
+/*   IAP function process                                                    */
+/*****************************************************************************/
 #define     READ_CID                0x0B
 #define     READ_DID                0x0C
 #define     READ_UID                0x04
@@ -156,9 +156,22 @@ __endasm;
 #define     DID_READ                0x0C
 
 #define     PAGE_SIZE               128
+#define     ENABLE_SPROM            set_IAPUEN_SPMEN
 
 /*****************************************************************************/
-/*   BOD Define                                                      */
+/*   Software reset                                                          */
+/*****************************************************************************/
+#define    ENABLE_SOFTWARE_RESET_TO_APROM    clr_CHPCON_BS;set_CHPCON_SWRST
+#define    ENABLE_SOFTWARE_RESET_TO_LDROM    set_CHPCON_BS;set_CHPCON_SWRST
+
+/*****************************************************************************/
+/*   Power down / idle mode define                                           */
+/*****************************************************************************/
+#define    POWERDOWN_MODE_ENABLE    set_PCON_PD
+#define    IDLE_MODE_ENABLE         set_PCON_IDLE
+
+/*****************************************************************************/
+/*   BOD Define                                                              */
 /*****************************************************************************/
 #define    BOD_ENABLE               BIT_TMP=EA;EA=0;SFRS=0;TA=0xAA;TA=0x55;BODCON0|=0x80;EA=BIT_TMP
 #define    BOD_RESET_ENABLE         BIT_TMP=EA;EA=0;SFRS=0;TA=0xAA;TA=0x55;BODCON0|=0x84;EA=BIT_TMP
@@ -168,12 +181,13 @@ __endasm;
 #define    ENABLE_BOD               BIT_TMP=EA;EA=0;SFRS=0;TA=0xAA;TA=0x55;BODCON0|=0x80;EA=BIT_TMP
 #define    ENABLE_BOD_RESET         BIT_TMP=EA;EA=0;SFRS=0;TA=0xAA;TA=0x55;BODCON0|=0x84;EA=BIT_TMP
 #define    DISABLE_BOD              BIT_TMP=EA;EA=0;SFRS=0;TA=0xAA;TA=0x55;BODCON0&=0x7B;EA=BIT_TMP
- /*****************************************************************************************/
-/* Interrupt function process */
-/*****************************************************************************************/
+
+/*****************************************************************************/
+/*   Interrupt function process                                              */
+/*****************************************************************************/
 #define    ENABLE_GLOBAL_INTERRUPT       EA=1            //Check
 #define    DISABLE_GLOBAL_INTERRUPT      EA=0
-/*ENABLE INTERRUPT*/
+/*Enable Interrupt*/
 #define    ENABLE_ADC_INTERRUPT          set_IE_EADC
 #define    ENABLE_BOD_INTERRUPT          set_IE_EBOD
 #define    ENABLE_UART0_INTERRUPT        set_IE_ES
@@ -423,7 +437,7 @@ __endasm;
 #define    CLEAR_TIMER2_INTERRUPT_FLAG       clr_T2CON_TF2
 #define    CLEAR_SPI0_INTERRUPT_FLAG         clr_SPSR_SPIF
 #define    CLEAR_PWM0_FB_INTERRUPT_FLAG      clr_PWM0FBD_FBF
-#define    CLEAR_WDT_INTERRUPT_FLAG          clr_WKCON_WKTF
+#define    CLEAR_WDT_INTERRUPT_FLAG          clr_WDCON_WDTF
 #define    CLEAR_PWM0_INTERRUPT_FLAG         clr_PWM1CON0_PWMF
 #define    CLEAR_CAPTURE_INTERRUPT_IC0_FLAG  clr_CAPCON0_CAPF0
 #define    CLEAR_CAPTURE_INTERRUPT_IC1_FLAG  clr_CAPCON0_CAPF1

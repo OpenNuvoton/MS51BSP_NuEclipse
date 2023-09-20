@@ -4,10 +4,8 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
 #include "ms51_16k_sdcc.h"
 
-unsigned char __data  TA_REG_TMP,BYTE_TMP,SFRS_TMP;
 
   /**
   * @brief This API configures modify system HIRC value

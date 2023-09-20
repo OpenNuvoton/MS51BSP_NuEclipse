@@ -17,7 +17,7 @@
 unsigned char   u8Receive_Data[5];
 unsigned char   __code u8Transmit_Data[5] = {0x4E, 0x55, 0x56, 0x4F, 0x54};
 unsigned char   u8CNT = 0;
-__bit             SPI_Send_Flag, SPI_Receive_Finish_Flag;
+BIT             SPI_Send_Flag, SPI_Receive_Finish_Flag;
 
 //-----------------------------------------------------------------------------------------------------------
 void SPI_ISR(void) __interrupt (9)                  // Vecotr @  0x4B

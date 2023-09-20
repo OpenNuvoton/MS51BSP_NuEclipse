@@ -37,7 +37,7 @@
 #include "spi.h"
 #include "timer.h"
 #include "uart.h"
-#include "watchdog.h"
+#include "wdt.h"
 #include "wkt.h"
 /********************************************************************/
 /*  <Macro define                                                   */

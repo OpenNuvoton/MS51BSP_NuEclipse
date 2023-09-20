@@ -4,15 +4,11 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-
-//***********************************************************************************************************
-//  File Function: ML51 series ADC continue mode demo code
-//***********************************************************************************************************
-
 #include "ms51_32k_sdcc.h"
-char __at 0x300 ResultTable[256] ;
-__bit ADC_CONT_FINAL_FLAG;
+
+
+unsigned char __at 0x300 ResultTable[256] ;
+BIT ADC_CONT_FINAL_FLAG;
 
 /**
  * @brief       ADC Interrupt Subroutine

@@ -18,13 +18,13 @@ __at (0x80)  unsigned char __xdata xtemp ;
 //----------------------------------------------------------------------------------------------//
 void main (void)
 {
-  ALL_GPIO_QUASI_MODE;
+  MODIFY_HIRC(HIRC_24);
   while(1)
   {
     P0 = ~ P0;
     P1 = ~ P1;
     P3 = ~ P3;
-    Timer0_Delay(16000000,200,1000);
+    Timer0_Delay(24000000,200,1000);
   }
 }
 

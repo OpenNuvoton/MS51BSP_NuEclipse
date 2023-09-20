@@ -4,51 +4,47 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-/************************************************************************************************************/
-/*  File Function: MS51 Wakeup timer demo code with interrupt                                               */
-/************************************************************************************************************/
-
 #include "ms51_16k_sdcc.h"
 
-__bit WKTINTFG;
+BIT wktflag;
 
 void WakeUp_Timer_ISR (void)   __interrupt (17)     //ISR for self wake-up timer
 {
     PUSH_SFRS;
-
-    WKTINTFG = 1;
-    clr_WKTF;                                   //clear interrupt flag
+  
+    clr_WKCON_WKTF;
+    wktflag = 1;
+    GPIO_LED ^= 1;
 
     POP_SFRS;
 }
-
 
 /************************************************************************************************************
 *    Main function 
 ************************************************************************************************************/
 void main (void)
 {
-   
-    P12_QUASI_MODE;
-
+  /* UART0 settting for printf function */
     MODIFY_HIRC(HIRC_24);
     Enable_UART0_VCOM_printf_24M_115200();
-    printf ("\n WKT test start ...");
+    printf ("\n Test start ...");
 
-/*  WKT initial  */
-    WKCON = 0x04;                     //timer base 10k, Pre-scale = 1/16
-    RWK = 0xEF;                       //  if prescale is 0x00, never set RWK = 0xff
-    RWK = 0x00;
-    ENABLE_WKT_INTERRUPT;             // enable WKT interrupt
+    GPIO_LED_QUASI_MODE;
+    
+    WKT_AutoReload_Interrupt_Initial_S(1);
+    WKT_Interrupt(Enable);
     ENABLE_GLOBAL_INTERRUPT;
-    set_WKCON_WKTR;                   // Wake-up timer run
-
+    wktflag = 0;
     while(1)
-    	if (WKTINTFG)
-    	{
-    		printf ("\n WKT interrupt! Clear flag.");
-    		WKTINTFG = 0 ;
-    		P12 ^=1;
-    	}
+    {
+      PowerDown_Mode(ENABLE);
+      if(wktflag)
+      {
+        SFRS=0;
+        printf ("\n\r WKT interrupt! \n\r");
+        wktflag = 0;
+      }
+    }
 }
+
+

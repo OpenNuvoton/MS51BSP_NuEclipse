@@ -4,21 +4,17 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-
-//***********************************************************************************************************
-//  File Function: MS51 IAP program LDROM demo code
-//***********************************************************************************************************
 #include "ms51_16k_sdcc.h"
 
 
-/*---------------------------------------------------------------
-// Following define by customer
-// Please confirm the start addresss not over your code size
-//---------------------------------------------------------------*/
-#define     DATA_SIZE           1024   
+/************************************************************************************************************/
+/* FUNCTION_PURPOSE: define IAP start address                                                               */
+/************************************************************************************************************/
 #define     DATA_START_ADDR     0x0000           
 
+/************************************************************************************************************/
+/* FUNCTION_PURPOSE: ADC interrupt Service Routine                                                          */
+/************************************************************************************************************/
 
 void main (void) 
 {
@@ -27,12 +23,12 @@ void main (void)
     Enable_UART0_VCOM_printf_24M_115200();
     printf ("\n Toggle P12 to low to start test ...");
 
-    P12_INPUT_MODE;
+    GPIO_LED_QUASI_MODE;
     
     for (i=0;i<128;i++)
         IAPDataBuf[i]=i;
 
-    while(P12);
+    while(GPIO_LED);
 
     Erase_LDROM(DATA_START_ADDR,128);
     Erase_Verify_LDROM(DATA_START_ADDR,128);

@@ -4,13 +4,9 @@
 /* Copyright(c) 2023 Nuvoton Technology Corp. All rights reserved.                                         */
 /*                                                                                                         */
 /*---------------------------------------------------------------------------------------------------------*/
-
-//***********************************************************************************************************
-//  File Function: MS51 BOD interrupt demo code
-//***********************************************************************************************************
 #include "ms51_32k_sdcc.h"
 
-__bit bodflag;
+BIT bodflag;
 void BOD_ISR (void) __interrupt (8)           // Vector @  0x43
 {
     clr_CHPCON_IAPEN; 
@@ -22,7 +18,7 @@ void BOD_ISR (void) __interrupt (8)           // Vector @  0x43
 void main (void)
 {
 /* As defaut all multi function define as GPIO */ 
-  ALL_GPIO_QUASI_MODE;
+  GPIO_LED_QUASI_MODE;
   bodflag =0;
   BOD_Open(Enable, VBOD_2_7, BOD_Reset_Disable);
   BOD_LowPower(LPBOD_Mode_3);
@@ -34,8 +30,8 @@ void main (void)
      CALL_NOP;
      if (bodflag)
      {
-       while (1)
-         P3=~P3;
+         GPIO_LED ^= 1;
+         bodflag = 0;
      }
   }
 }
