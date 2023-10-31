@@ -96,20 +96,9 @@ typedef signed long           int32_t;
 /*****************************************************************************/
 /*   sdcc only for push/pop SFRS                                             */
 /*****************************************************************************/
-#define PUSH_SFRS \
-__asm \
-push 0x91; \
-__endasm;
-
-#define POP_SFRS \
-__asm \
-pop 0x91; \
-__endasm;
-
-#define CALL_NOP \
-__asm \
-nop; \
-__endasm;
+#define PUSH_SFRS  __asm__("push 0x91;")
+#define POP_SFRS   __asm__("pop 0x91;")
+#define CALL_NOP   __asm__("nop;")
 
 /*****************************************************************************/
 /*   Software reset                                                          */
